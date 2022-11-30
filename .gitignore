@@ -36,5 +36,4 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore sqlitedb
-
 /db/*.sqlite3
