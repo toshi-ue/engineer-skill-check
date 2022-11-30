@@ -10,7 +10,7 @@
   "ruby.useLanguageServer": true,
   "ruby.lint": {
     "rubocop": {
-        "useBundler": true,
+      "useBundler": true,
     }
   },
   "ruby.format": "rubocop",
