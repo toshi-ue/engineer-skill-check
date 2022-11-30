@@ -3,8 +3,8 @@
 - 検証環境として docker環境を用意しています。必ずdocker環境を利用してください。
 - 下記コマンドを実行すると3000番ポートでRailsサーバーが起動します。
 ```
-$ docker-compose build
-$ docker-compose up -d
+$ docker compose build
+$ docker compose up -d
 ```
 
 ### バージョン
@@ -16,19 +16,23 @@ sqlite3: 1.4.2
 ```
 
 ### セットアップ情報
-コンテナに入った後、yarnインストールと初期データの投入を行ってください。
+コンテナに入った後、yarnインストールと初期データの投入を行ってください。なお、初回起動時はyarn installされていないのでwebpackerサービスは起動に失敗します。
 ```
-$ docker-compose exec web bash
+$ docker compose exec web bash
 ```
 
 yarnインストール
 ```
-yarn install
+# yarn install
 ```
 
 初期データの投入
 ```
-# bundle exec rails db:create
-# bundle exec rails db:migrate
-# bundle exec rails db:seed
+# bin/rails db:schema:load
+# bin/rails db:seed
+```
+webpackerサービスを再度起動してください
+
+```
+$ docker compose up -d webpacker
 ```
