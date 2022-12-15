@@ -1,0 +1,18 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.renderControlCharacters": true,
+  "files.insertFinalNewline": true,
+
+  // for rubocop
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true,
+    }
+  },
+  "ruby.format": "rubocop",
+  "solargraph.useBundler": true,
+}

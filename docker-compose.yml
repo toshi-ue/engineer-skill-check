@@ -1,20 +1,34 @@
 version: "3.9"
+
+x-rails_app_volumes: &rails_app_volumes
+  - .:/news_and_employee_introduction:cached
+  - packs:/news_and_employee_introduction/public/packs
+  - node_modules:/news_and_employee_introduction/node_modules
+  - bundle:/usr/local/bundle
+
 services:
   webpacker:
     build: .
     volumes:
-      - .:/news_and_employee_introduction
+      *rails_app_volumes
     command: "./bin/webpack-dev-server"
     environment:
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+      NODE_OPTIONS: --openssl-legacy-provider
     ports:
       - "3035:3035"
   web:
     build: .
-    command: "bundle exec rails s -b '0.0.0.0' -p 3000"
+    command: "bin/rails s -b 0.0.0.0"
     volumes:
-      - .:/news_and_employee_introduction
+      *rails_app_volumes
     ports:
       - "3000:3000"
     environment:
       WEBPACKER_DEV_SERVER_HOST: webpacker
+    tty: true
+    stdin_open: true
+volumes:
+  packs:
+  node_modules:
+  bundle:
