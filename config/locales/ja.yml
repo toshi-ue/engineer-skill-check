@@ -12,6 +12,10 @@ ja:
         too_short: は%{count}文字以上で入力してください
         taken: はすでに存在します
       models:
+        employee:
+          attributes:
+            email_confirmation:
+              confirmation: を入力してください
         profile:
           attributes:
             profile:
@@ -29,7 +33,7 @@ ja:
         account: アカウント
         password: パスワード
         email: メールアドレス
-        email_confirmation: メールアドレス（再入力）
+        email_confirmation: メールアドレス（確認）
         date_of_joining: 入社年月日
         department_id: 部署
         office_id: オフィス
