@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Employee < ApplicationRecord
   belongs_to :office
   belongs_to :department
@@ -15,14 +17,14 @@ class Employee < ApplicationRecord
     validates :email, confirmation: { case_sensitive: true }
   end
 
-  scope :active, -> {
+  scope :active, lambda {
     where(deleted_at: nil)
   }
 
   def create_or_update_email?
-    return true if !!!email_in_database.present?
+    return true if email_in_database.nil?
     return true if will_save_change_to_email?
-    return false
-  end
 
+    false
+  end
 end
