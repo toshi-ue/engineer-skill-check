@@ -6,6 +6,8 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.active.order("#{sort_column} #{sort_direction}")
+    @employee = @employees.first
+    byebug
   end
 
   def new
