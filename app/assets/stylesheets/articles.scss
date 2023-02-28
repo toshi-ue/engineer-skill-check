@@ -1,3 +1,51 @@
+.article_index {
+  .new_article {
+    text-align: right;
+    margin-right: 31px;
+  }
+
+  .btn {
+    border: 1px solid;
+    padding: 3px 5px;
+  }
+
+  .article_table {
+    height: fit-content;
+    width: 700px;
+    table-layout: fixed;
+    margin-top: 20px;
+
+    tbody {
+      .delete {
+        text-align: right;
+        padding-right: 10px;
+      }
+
+      .title {
+        text-align: left;
+        padding-left: 50px;
+      }
+    }
+
+    thead {
+      line-height: 50px;
+
+      .title {
+        width: 400px;
+        text-align: left;
+        padding-left: 50px;
+      }
+    }
+
+    .article {
+      line-height: 30px;
+
+      .btn_th {
+        display: inline-block;
+      }
+    }
+  }
+}
 
 .article_form {
   width: 700px;

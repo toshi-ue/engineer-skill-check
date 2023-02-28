@@ -10,4 +10,7 @@ class Article < ApplicationRecord
     where(deleted_at: nil)
   }
 
+  def owner?(user_id)
+    return user_id == self.author.id
+  end
 end
