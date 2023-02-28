@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = Article.new(article_params.merge({author: current_user}))
 
     if @article.save
       redirect_to articles_url, notice: "おしらせ 「#{@article.title}」を登録しました。"
