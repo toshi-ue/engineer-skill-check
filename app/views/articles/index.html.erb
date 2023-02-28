@@ -9,6 +9,7 @@
     <thead>
       <tr>
         <th class="title">タイトル</th>
+        <th><%= article_sort_order "created_at", "公開日" %></th>
         <th></th>
       </tr>
     </thead>
@@ -16,6 +17,7 @@
     <% @articles.each do |article| %>
       <tr class="article">
         <td><%= link_to article.title, article_path(article), class: "title" %></td>
+        <td><%= article.created_at %></td>
         <% if article.owner?(current_user.id) %>
           <td class="delete"><%= link_to '削除', article, method: :delete, data: { confirm: "お知らせ「#{article.title}」を削除します。よろしいですか？" }, class: 'btn' %></td>
         <% end %>
