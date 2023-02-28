@@ -94,3 +94,36 @@
     border: 1px solid;
   }
 }
+
+.article_space {
+  position: relative;
+  margin-top: 30px;
+
+  .article_index {
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .btn {
+    border: 1px solid;
+    padding: 3px 5px;
+  }
+
+  .label {
+    display: inline-block;
+    width: 120px;
+    vertical-align: top;
+  }
+
+  .row {
+    line-height: 2.4em;
+
+    .article_value {
+      width: 480px;
+      display: inline-block;
+      line-height: 1.5em;
+      padding-top: 20px;
+      word-wrap: break-word;
+    }
+  }
+}

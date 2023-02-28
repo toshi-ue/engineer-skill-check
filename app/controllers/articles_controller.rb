@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[edit update destroy]
+  before_action :set_article, only: %i[show edit update destroy]
 
   def index
     @articles = Article.active
@@ -20,6 +20,8 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+
+  def show; end
 
   def edit; end
 
