@@ -12,6 +12,10 @@ ja:
         too_short: は%{count}文字以上で入力してください
         taken: はすでに存在します
       models:
+        article:
+          attributes:
+            title:
+              blank: が入力されていません
         employee:
           attributes:
             email_confirmation:
@@ -26,6 +30,10 @@ ja:
       office: オフィス
       profile: プロフィール
     attributes:
+      article:
+        title: タイトル
+        content: 内容
+        author: 投稿者
       employee:
         number: 社員番号
         last_name: 氏名（姓）
