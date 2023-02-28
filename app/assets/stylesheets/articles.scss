@@ -1,3 +1,48 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.article_form {
+  width: 700px;
+  position: relative;
+  margin-top: 60px;
+
+  .form_group {
+    display: flex;
+    line-height: 2.4em;
+
+    label {
+      display: inline-block;
+      width: 120px;
+    }
+
+    input {
+      width: 150px;
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+
+    input[type="checkbox"] {
+      margin: 12px 0 0 -227px;
+    }
+
+    select {
+      height: 29px;
+      width: 158px;
+      padding-left: 12px;
+      margin-top: 5px;
+      border-radius: 6px;
+    }
+
+    .checkbox_label {
+      width: fit-content;
+      margin-left: 30px;
+    }
+  }
+
+  input[type="submit"] {
+    position: absolute;
+    top: -38px;
+    right: 20px;
+    padding: 0px 22px;
+    background-color: white;
+    border: 1px solid;
+  }
+}
