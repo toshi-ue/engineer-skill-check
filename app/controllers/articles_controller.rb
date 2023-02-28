@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update destroy]
 
   def index
-    @articles = Article.includes(:author)
+    @articles = Article.active
   end
 
   def new
@@ -47,6 +47,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-    @article = Article.find(params['id']).includes(:employee)
+    @article = Article.find(params['id'])
   end
 end
