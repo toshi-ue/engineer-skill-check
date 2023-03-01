@@ -46,7 +46,7 @@ class EmployeesController < ApplicationController
 
   def employee_params
     params.require(:employee).permit(:number, :last_name, :first_name, :account, :password, :email,
-                                     :email_confirmation, :date_of_joining, :department_id, :office_id, :employee_info_manage_auth, :news_posting_auth)
+                                     :email_confirmation, :date_of_joining, :department_id, :office_id, :employee_info_manage_auth, :new_posting_auth)
   end
 
   def set_employee

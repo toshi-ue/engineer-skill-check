@@ -3,6 +3,7 @@
 class Employee < ApplicationRecord
   belongs_to :office
   belongs_to :department
+  has_many :articles, foreign_key: :author
   has_many :profiles
 
   validates :number, presence: true, uniqueness: true
