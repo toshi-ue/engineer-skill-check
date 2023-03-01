@@ -16,6 +16,10 @@
     margin-top: 20px;
 
     tbody {
+      .created_at {
+        text-align: center;
+      }
+
       .delete {
         text-align: right;
         padding-right: 10px;
