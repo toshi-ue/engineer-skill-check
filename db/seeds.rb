@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,8 +8,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-DEPARTMENT_NAME = %w[総務部 技術部 営業部]
-OFFICE_NAME = %w[東京 仙台 大阪 福岡 大分]
+DEPARTMENT_NAME = %w[総務部 技術部 営業部].freeze
+OFFICE_NAME = %w[東京 仙台 大阪 福岡 大分].freeze
 
 DEPARTMENT_NAME.each.with_index(1) { |department, i| Department.find_or_create_by(id: i, name: department) }
 OFFICE_NAME.each.with_index(1) { |office, i| Office.find_or_create_by(id: i, name: office) }
