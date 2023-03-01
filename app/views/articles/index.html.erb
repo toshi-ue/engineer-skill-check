@@ -20,7 +20,7 @@
         <td class="created_at"><%= l article.created_at %></td>
         <% if article.owner?(current_user.id) %>
           <td class="delete">
-            <%= link_to '変更', edit_article_path(article), class: 'btn' %>
+            <%= link_to '編集', edit_article_path(article), class: 'btn' %>
             <%= link_to '削除', article, method: :delete, data: { confirm: "お知らせ「#{article.title}」を削除します。よろしいですか？" }, class: 'btn' %>
           </td>
         <% end %>
