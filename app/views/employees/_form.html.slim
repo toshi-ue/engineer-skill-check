@@ -1,0 +1,43 @@
+.employee_form
+  - if employee.errors.present?
+    ul
+      - employee.errors.full_messages.each do |message|
+        li
+          = message
+  = form_with model: employee, local: true do |f|
+    .form_group
+      = f.label :number
+      = f.text_field :number
+    .form_group
+      = f.label :last_name
+      = f.text_field :last_name
+      = f.label :first_name
+      = f.text_field :first_name
+    .form_group
+      = f.label :account
+      = f.text_field :account
+    .form_group
+      = f.label :password
+      = f.password_field :password
+    .form_group
+      = f.label :email
+      = f.email_field :email
+    .form_group
+      = f.label :email_confirmation
+      = f.email_field :email_confirmation
+    .form_group
+      = f.label :date_of_joining
+      = f.date_field :date_of_joining
+    .form_group
+      = f.label :department_id
+      = f.collection_select(:department_id, @departments, :id, :name)
+    .form_group
+      = f.label :office_id
+      = f.collection_select(:office_id, @offices, :id, :name)
+    .form_group
+      = f.label :employee_info_manage_auth, class: 'checkbox_label'
+      = f.check_box :employee_info_manage_auth, :as => :boolean
+    .form_group
+      = f.label :new_posting_auth, class: 'checkbox_label'
+      = f.check_box :new_posting_auth, :as => :boolean
+    = f.submit '保存'

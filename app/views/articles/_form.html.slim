@@ -1,0 +1,15 @@
+.article_form
+  - if article.errors.present?
+    ul
+      - article.errors.full_messages.each do |message|
+        li
+          = message
+  - # FIXME: 保存失敗してレンダリングされた時にデザインが崩れる
+  = form_with model: article, local: true do |f|
+    .form_group
+      = f.label :title
+      = f.text_field :title, style: "width:100%"
+    .form_group
+      = f.label :content
+      = f.text_area :content, style: "width:100%", rows: 20
+    = f.submit '保存'

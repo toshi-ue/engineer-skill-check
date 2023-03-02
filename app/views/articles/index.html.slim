@@ -1,0 +1,27 @@
+.article_index
+  - if flash.notice.present?
+    p
+      = flash.notice
+  - if current_user.new_posting_auth
+    p.new_article
+      = link_to '新規追加', new_article_path, class: 'btn'
+  table.article_table
+    thead
+      tr
+        th.title
+          | タイトル
+        th
+          = article_sort_order "created_at", "公開日"
+        th
+    tbody
+      - @articles.each do |article|
+        tr.article
+
+        td
+          = link_to article.title, article_path(article), class: "title"
+        td.created_at
+          = l article.created_at
+        - if article.owner?(current_user.id)
+          td.delete
+            = link_to '編集', edit_article_path(article), class: 'btn'
+            = link_to '削除', article, method: :delete, data: { confirm: "お知らせ「#{article.title}」を削除します。よろしいですか？" }, class: 'btn'

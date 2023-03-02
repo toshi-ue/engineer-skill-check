@@ -19,7 +19,8 @@ ja:
         employee:
           attributes:
             email_confirmation:
-              confirmation: を入力してください
+              confirmation: が入力されていません
+          blank: が入力されていません
         profile:
           attributes:
             profile:
