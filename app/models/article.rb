@@ -11,6 +11,6 @@ class Article < ApplicationRecord
   }
 
   def owner?(user_id)
-    return user_id == self.author.id
+    user_id == author.id
   end
 end
