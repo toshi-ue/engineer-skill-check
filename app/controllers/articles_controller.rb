@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    @articles = Article.includes(:author).active.order("#{sort_column} #{sort_direction}")
+    @pagy, @articles = pagy(Article.includes(:author).active.order("#{sort_column} #{sort_direction}"))
   end
 
   def new

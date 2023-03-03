@@ -36,3 +36,4 @@
               = link_to '編集', edit_employee_path(employee), class: 'btn'
             th.btn_th
               = link_to '削除', employee, method: :delete, data: { confirm: "社員「#{employee.first_name} #{employee.last_name}」を削除します。よろしいですか？" }, class: 'btn'
+  == pagy_nav(@pagy)
