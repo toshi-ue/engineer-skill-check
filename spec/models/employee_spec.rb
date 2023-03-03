@@ -19,8 +19,8 @@ RSpec.describe Employee, type: :model do
   end
 
   describe '#create_or_update_email?' do
-    let(:new_employee) { create(:employee, deleted_at: nil, email: "example1@example.com") }
-    let!(:existing_employee) { create(:employee, deleted_at: nil, email: "example2@example.com") }
+    let(:new_employee) { create(:employee, deleted_at: nil, email: 'example1@example.com') }
+    let!(:existing_employee) { create(:employee, deleted_at: nil, email: 'example2@example.com') }
 
     # QUESTION: テストの書き方が違う?
     context 'データベースに同じメールアドレスが存在するとき' do
@@ -32,7 +32,7 @@ RSpec.describe Employee, type: :model do
 
     context 'データベースに同じメールアドレスが存在しないとき' do
       it 'trueを返す' do
-        new_employee.email = Faker::Internet.unique.email
+        new_employee.email = Faker::Internet.unique.free_email
         expect(new_employee).to be_valid
       end
     end
