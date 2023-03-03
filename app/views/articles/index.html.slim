@@ -25,3 +25,4 @@
           td.delete
             = link_to '編集', edit_article_path(article), class: 'btn'
             = link_to '削除', article, method: :delete, data: { confirm: "お知らせ「#{article.title}」を削除します。よろしいですか？" }, class: 'btn'
+  == pagy_nav(@pagy)
